@@ -46,7 +46,7 @@ async def free_deploy(ctx):
     await user.send(f"Your VPS is ready! Access it via this Tmate SSH link: {tmate_session}")
 
 def deploy_vps():
-    docker_cmd = "docker run -d --rm --memory=8g --cpus=4 --name temp_vps ubuntu bash -c 'apt update && apt install -y tmate && tmate -F json'"
+    docker_cmd = "docker run -d --rm --memory=8g --cpus=4 --name ryn-i7 ubuntu bash -c 'apt update && apt install -y tmate && tmate -F json'"
     output = subprocess.check_output(docker_cmd, shell=True, text=True)
     try:
         session_data = json.loads(output)
